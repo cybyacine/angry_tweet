@@ -2,7 +2,7 @@ import threading
 import socket
 
 PORT = 5050
-SERVER = "localhost"
+SERVER = "192.168.76.140"
 ADDR = (SERVER, PORT)
 FORMAT = "utf-8"
 DISCONNECT_MESSAGE = "!DISCONNECT"
