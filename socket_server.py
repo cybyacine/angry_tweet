@@ -48,3 +48,5 @@ def start():
             clients.add(conn)
         thread = threading.Thread(target=handle_client, args=(conn, addr))
         thread.start()
+
+start()
