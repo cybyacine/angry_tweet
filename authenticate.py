@@ -1,22 +1,27 @@
-import ldap
 
-if __name__ == "__main__":
-    ldap_server = "ldap://localhost"
-    username = "ybenouirane"
-    password = "yacine"
-    # the following is the user_dn format provided by the ldap server
-    user_dn = "uid=" + username + ",ou=users,dc=tekup,dc=local"
-    # adjust this to your base dn for searching
-    base_dn = "dc=somedc,dc=local"
-    connect = ldap.open(ldap_server)
-    search_filter = "uid=" + username
+from ldap3 import Connection, Server, ALL
+from ldap3.core.exceptions import LDAPBindError
+import socket_client
+
+
+def authenticate():
+    server_uri = f"ldap://192.168.76.140:389"
+    server = Server(server_uri, get_info=ALL)
+    username = input('Enter username : ')
+    password = input("saisir votre mot de passe : ")
     try:
-        # if authentication successful, get the full user data
-        connect.bind_s(user_dn, password)
-        result = connect.search_s(base_dn, ldap.SCOPE_SUBTREE, search_filter)
-        # return all user data results
-        connect.unbind_s()
-        print(result)
-    except ldap.LDAPError:
-        connect.unbind_s()
-        print("authentication error")
+        # Provide the hostname and port number of the openLDAP
+        server = Server(server_uri, get_info=ALL)
+        # username and password can be configured during openldap setup
+        connection = Connection(server,
+                                user='cn=Yacine Ben Ouirane,ou=users,dc=tekup,dc=local',
+                                password='ybenouirane')
+        bind_response = connection.bind()  # Returns True or False
+        print(bind_response)
+        if bind_response:
+            socket_client.start()
+        connection.unbind()
+    except LDAPBindError as e:
+        connection = e
+    finally:
+        connection.unbind()
