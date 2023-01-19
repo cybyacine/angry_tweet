@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>tweet-me2.png</file>
+    <file>tweet-me.png</file>
+    <file>icon.png</file>
+  </qresource>
+</RCC>
