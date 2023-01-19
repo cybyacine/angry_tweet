@@ -1,12 +1,15 @@
 import sys
+from PyQt5 import QMainWindow, QApplication
+from PyQt5 import uic.loadUi
 
-from PyQt5.QtWidgets import QApplication
 
-if __name__ == '__main__':
-    app = QApplication(sys.argv)
+class Ui(QMainWindow):
+    def __init__(self):
+        super(Ui, self).__init__()
+        loadUi('basic.ui', self)
+        self.show()
 
-    window = MainWindow
-    window.show()
 
-    app.exec()
-    sys.exit(app.exec_())
+app = QApplication(sys.argv)
+window = Ui()
+app.exec_()

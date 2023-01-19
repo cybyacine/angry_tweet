@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>800</width>
-    <height>600</height>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -237,14 +237,14 @@ color: rgb(98, 160, 234);</string>
        <item>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QLineEdit" name="lineEdit">
+          <widget class="QLineEdit" name="usernameLineEdit">
            <property name="placeholderText">
             <string>your username</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLineEdit" name="lineEdit_2">
+          <widget class="QLineEdit" name="passwordLineEdit">
            <property name="placeholderText">
             <string>your password</string>
            </property>
@@ -269,7 +269,7 @@ color: rgb(98, 160, 234);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="../img/test.qrc">:/newPrefix/tweet-me.png</pixmap>
+     <pixmap resource="../Imgs/test.qrc">:/newPrefix/tweet-me.png</pixmap>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
@@ -285,11 +285,11 @@ color: rgb(98, 160, 234);</string>
      <string>© 2023 TEK-UP. All rights reserved.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="okPushButton">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>210</y>
+      <x>330</x>
+      <y>220</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -298,11 +298,11 @@ color: rgb(98, 160, 234);</string>
      <string>OK</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="cancelPushButton">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>210</y>
+      <x>230</x>
+      <y>220</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -311,11 +311,11 @@ color: rgb(98, 160, 234);</string>
      <string>CANCEL</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="signUpPushButton">
     <property name="geometry">
      <rect>
-      <x>700</x>
-      <y>20</y>
+      <x>690</x>
+      <y>40</y>
       <width>89</width>
       <height>25</height>
      </rect>
@@ -327,13 +327,14 @@ color: rgb(98, 160, 234);</string>
    <zorder>label_4</zorder>
    <zorder>verticalLayoutWidget</zorder>
    <zorder>label_5</zorder>
-   <zorder>pushButton</zorder>
-   <zorder>pushButton_2</zorder>
-   <zorder>pushButton_3</zorder>
+   <zorder>okPushButton</zorder>
+   <zorder>cancelPushButton</zorder>
+   <zorder>signUpPushButton</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
+  <include location="../Imgs/test.qrc"/>
   <include location="../img/test.qrc"/>
  </resources>
  <connections/>
