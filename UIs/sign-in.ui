@@ -406,7 +406,7 @@ color: rgb(255, 170, 0);</string>
          <string>© 2023 TEK-UP. All rights reserved.</string>
         </property>
         <property name="alignment">
-         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
         </property>
        </widget>
       </item>
