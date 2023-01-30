@@ -16,7 +16,7 @@ def connect_ldap_server():
                                 user='cn=admin,dc=tekup,dc=local',
                                 password=PASSWORD)
         bind_response = connection.bind()  # Returns True or False
-        print(bind_response)
+        return connection
     except LDAPBindError as e:
         connection = e
 
@@ -38,10 +38,13 @@ def get_ldap_users():
                          attributes=['cn', 'sn', 'uid', 'uidNumber'])
         # search will not return any values.
         # the entries method in connection object returns the results
-        results = Connection.entries
+        results = Connection.response_to_json()
+        print(results)
     except LDAPException as e:
         results = e
 
+
+get_ldap_users()
 
 # Create a new group
 def add_ldap_group():

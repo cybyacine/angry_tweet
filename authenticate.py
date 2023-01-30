@@ -14,7 +14,7 @@ def authenticate():
         server = Server(server_uri, get_info=ALL)
         # username and password can be configured during openldap setup
         connection = Connection(server,
-                                user='cn=Yacine Ben Ouirane,ou=users,dc=tekup,dc=local',
+                                user='uid=ybenouirane,ou=users,dc=tekup,dc=local',
                                 password='ybenouirane')
         bind_response = connection.bind()  # Returns True or False
         print(bind_response)
@@ -25,3 +25,5 @@ def authenticate():
         connection = e
     finally:
         connection.unbind()
+
+authenticate()
